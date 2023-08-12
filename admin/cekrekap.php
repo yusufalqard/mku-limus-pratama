@@ -31,10 +31,13 @@
 					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>
 				</li>
 				<li>
-					<a href="../admin/cekrekap.php">Cek Rekap Data</a>
+					<a href="../admin/cekrekap.php">Cek Data</a>
 				</li>
     			<li>
 					<a href="../admin/kontak.php">Hubungi Kami</a>
+				</li>
+                <li>
+					<a href="logout.php">Logout</a>
 				</li>
 				<li class="kosongbesar"></li>
 				<li class="botIkon">
@@ -53,8 +56,12 @@
 	</script>
     
 	<section class="maindsb">
+            <center>
 			<h1 class="cekrekap">Silahkan pilih data berdasarkan tabel dibawah ini</h1>
-            <table class="cekrekaptbl" border="1" cellpadding="10" cellspacing="0">
+            <button><a href=tambah.php?>Tambah</a></button>
+            <br><br>
+            </center>
+            <table class="cekrekaptbladm" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
                 <th>Deskripsi</th>

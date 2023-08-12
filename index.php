@@ -28,7 +28,7 @@
     <div class="topLogoLogin">
             <p>Halaman Login - Masjid Khoiru Ummah</p>
     </div>
-<form action="cek_user.php?log=msk" method="POST">
+<form action="cek_user.php" method="POST">
     <div class="container">
         <div class="boxlogin">
             <ul>

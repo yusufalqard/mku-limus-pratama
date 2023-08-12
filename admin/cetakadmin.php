@@ -12,52 +12,9 @@
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	<script type="text/javascript" src="../js/jquery.js"></script>
   </head>
-  <body class="adminPAGE">
-   <header>
-    <button class="tombolmenu">Menu</button>
-		<nav class="listmenu">
-			<ul>
-				<li class="kosong">
-					<img src="../gambar/logomasjid.png">
-				</li>
-    			<li>
-					<a href="../admin/admin_page.php">Dashboard</a>
-				</li>
-    			<li>
-					<a href="../admin/rekapdata.php">Data User</a>
-				</li>
-    			<li>
-					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>
-				</li>
-				<li>
-					<a href="../admin/cekrekap.php">Cek Data</a>
-				</li>
-    			<li>
-					<a href="../admin/kontak.php">Hubungi Kami</a>
-				</li>
-				<li>
-					<a href="../logout.php">Logout</a>
-				</li>
-				<li class="kosongbesar"></li>
-				<li class="botIkon">
-					<a href="https://t.me/Hawiqard" target="_blank"><img src="../gambar/telegram.png"></a>
-					<a href="https://github.com/yusufalqard" target="_blank"><img src="../gambar/github.png"></a>
-				</li>
-  			</ul>
-		</nav>
-	</header>
-    <script type="text/javascript">
-		$(document).ready(function(){
-			$('.tombolmenu').click(function(){
-				$('.listmenu').toggleClass('sidebar-menu');
-			});
-		});
-	</script>
+<body class="adminPAGE">
 	<section class="maindsb">
-			<h1>List Data Laporan Terbaru</h1>
-            <button type="button"><a href="../admin/cetakadmin.php" class="cetak" target="_blank">Cetak Laporan</a></button>
-            <br>
-            <br>
+        <h2><?= date("l, d F Y");?></h2>
         <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
@@ -90,5 +47,11 @@
         </table>
         </div>
 	</section>
+    <div class="mengetahui">
+        <p>Bogor, <?= date("d F Y");?></p>
+        <p>Mengetahui</p>
+        <br>
+        <p>(Pengurus DKM)</p>
+    </div>
 </body>
 </html>

@@ -9,7 +9,7 @@
          if(ubah($_POST)> 0){
              echo "<script type='text/javascript'>
                         alert('Data berhasil diubah');
-                        document.location.href='admin_page.php';
+                        document.location.href='rekapdata.php';
                     </script>
                 ";
          } else{
@@ -46,7 +46,7 @@
 					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>
 				</li>
 				<li>
-					<a href="../admin/cekrekap.php">Cek Rekap Data</a>
+					<a href="../admin/cekrekap.php">Cek Data</a>
 				</li>
     			<li>
 					<a href="../admin/kontak.php">Hubungi Kami</a>

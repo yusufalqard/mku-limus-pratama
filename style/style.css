@@ -175,13 +175,49 @@ div.botLogoFooter{
 	padding: 10px;
 	font-size: 14pt;	
 }
+/* Section untuk Rekap Data TMEPORAL */
+.cekrekaptbladm{
+    font-size: 12pt;
+    border-collapse:collapse;
+    width:80%;
+    font-family: Arial;
+    border: 1px solid black;
+    margin-left:10% ;
+}
+.cekrekaptbladm, th {
+    background-color: #62a5c2;
+    color: black;
+    font-weight: normal;
+    vertical-align: center;
+    text-align: center;
+}
+.cekrekaptbladm th, .cekrekaptabel td {
+    padding: 6px 12px;
+    text-align: center;
+}
+.cekrekaptbladm tr {
+    background-color: #ffffff88;
+    color:black;
+}
+.cekrekaptbladm tr:nth-child(even) {
+    background-color: #cfb3b3;
+    color:black;
+    text-align: center;
+}
+.cekrekaptbladm tr:nth-child(odd) {
+    background-color: #83a87f;
+    color:black;
+    text-align: center;
+}
 /* Section untuk Rekap Data PENGGUNA */
 .cekrekaptbl{
     font-size: 12pt;
     border-collapse:collapse;
-    width:70%;
+    width:40%;
     font-family: Arial;
     border: 1px solid black;
+    margin-left:25%;
+    margin-right:25%;
 }
 .cekrekaptbl, th {
     background-color: #62a5c2;
@@ -199,20 +235,25 @@ div.botLogoFooter{
     color:black;
 }
 .cekrekaptbl tr:nth-child(even) {
-    background-color: #ffffff;
+    background-color: #cfb3b3;
     color:black;
     text-align: center;
 }
-/* Section untuk Dahboard Cek Rekap Data as Admin*/
+.cekrekaptbl tr:nth-child(odd) {
+    background-color: #83a87f;
+    color:black;
+    text-align: center;
+}
+/* Section untuk Dashboard Cek Rekap Data as Admin*/
 .cekrekapadm{
-    font-size: 15pt;
+    font-size: 10pt;
     border-collapse:collapse;
-    width:90%;
+    width:70%;
     font-family: Arial;
     border: 1px solid black;
 }
 .cekrekapadm, th {
-    background-color: #62a5c2;
+    background-color: #1ea4e2;
     color: black;
     font-weight: normal;
     vertical-align: center;
@@ -227,7 +268,13 @@ div.botLogoFooter{
     color:rgb(0, 0, 0);
 }
 .cekrekapadm tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #dbdada;
+    color:black;
+    text-align: center;
+    font-weight: bold;
+}
+.cekrekapadm tr:nth-child(odd) {
+    background-color: #cfb0cb;
     color:black;
     text-align: center;
 }
@@ -254,6 +301,45 @@ div.botLogoFooter{
     font-size: 10pt;
 }
 .mengetahui{
-    float:left;
+    float:right;
+    padding-right: 30%;
     font-size: 12pt;
+}
+/* Section untuk cetak laporan admin */
+.rekapadmin{
+    font-size: 10pt;
+    border-collapse:collapse;
+    width:70%;
+    font-family: Arial;
+    border: 1px solid black;
+}
+.rekapadmin, th {
+    background-color: #81caec;
+    color: black;
+    font-weight: normal;
+    vertical-align: center;
+    text-align: center;
+}
+.rekapadmin th, .rekapadmin td {
+    padding: 6px 12px;
+    text-align: center;
+}
+.rekapadmin tr {
+    background-color: #ffffff88;
+    color:rgb(0, 0, 0);
+}
+.rekapadmin tr:nth-child(even) {
+    background-color: #e6e6e6;
+    color:black;
+    text-align: center;
+}
+.rekapadmin tr:nth-child(odd) {
+    background-color: #f3b3d1;
+    color:black;
+    text-align: center;
+}
+.cekuser{
+    font-size:14pt;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left:30%;
 }

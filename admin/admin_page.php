@@ -15,7 +15,6 @@
   </head>
 <body class="adminPAGE">
    <header>
-	<h1 class="judul">Selamat Datang, $username</h1>
     <button class="tombolmenu">Menu</button>
 		<nav class="listmenu">
 			<ul>
@@ -32,7 +31,7 @@
 					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>
 				</li>
 				<li>
-					<a href="../admin/cekrekap.php">Cek Rekap Data</a>
+					<a href="../admin/cekrekap.php">Cek Data</a>
 				</li>
     			<li>
 					<a href="../admin/kontak.php">Hubungi Kami</a>

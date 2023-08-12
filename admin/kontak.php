@@ -34,10 +34,13 @@
 					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>
 				</li>
 				<li>
-					<a href="../admin/cekrekap.php">Cek Rekap Data</a>
+					<a href="../admin/cekrekap.php">Cek Data</a>
 				</li>
     			<li>
 					<a href="../admin/kontak.php">Hubungi Kami</a>
+				</li>
+				<li>
+					<a href="logout.php">Logout</a>
 				</li>
 				<li class="kosongbesar"></li>
 				<li class="botIkon">

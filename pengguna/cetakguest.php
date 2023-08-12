@@ -53,7 +53,7 @@
     <div class="mengetahui">
         <p>Bogor, <?= date("d F Y");?></p>
         <p>Mengetahui</p>
-        <p>Taufik</p>
+        <br>
         <p>(Pengurus DKM)</p>
     </div>
     </center>

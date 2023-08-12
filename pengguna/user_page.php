@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Halaman Admin - MKU</title>
+    <title>Halaman Pengguna - MKU</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	<script type="text/javascript" src="../js/jquery.js"></script>
   </head>
@@ -47,7 +47,7 @@
 	</script>
 	<section class="maindsb">
         <br>
-            <ul>
+            <ul class="">
                 <li>
                     <label for = "username">Username Anda : </label>
                     <input type="text" name="username" id="username">
@@ -58,10 +58,6 @@
                     <input type="text" name="leveluser" id="leveluser">
                 </li>
                 <li class="ruang"></li>
-                <li>
-                    <label for="password">Password Anda : </label>
-                    <input type="password" name="password" id="password">
-                </li>
             </ul>
                     <div class="botLogoFooter" id="footer">
                         <p>© 2023 Masjid Khoiru Ummah, Org. All rights reserved</p>

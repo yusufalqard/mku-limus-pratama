@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Halaman Admin - MKU</title>
+    <title>Homepage - MKU [Guest]</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	  <script type="text/javascript" src="../js/jquery.js"></script>
   </head>
@@ -47,8 +47,10 @@
 		  });
 	  </script>
 	<section class="maindsb">
+    <center>
       <p>Data Infaq Jum'at - Preview GUEST Mode</p>
-    <button type="button"><a href="../pengguna/cetakguest.php" class="cetak" target="_blank">Cetak Laporan</a></button>
+      <button type="button"><a href="../pengguna/cetakguest.php" class="cetak" target="_blank">Cetak Laporan</a></button>
+    </center>
       <br>
       <br>
       <table name="data" class="cekrekaptbl" border="1" cellpadding="10" cellspacing="0">
