@@ -41,7 +41,7 @@
         $password = mysqli_real_escape_string($conn,$data["password"]);
         $leveluser = htmlspecialchars($data["leveluser"]);
         //Encryption Password yang diubah oleh admin
-        $password = password_hash($password,PASSWORD_DEFAULT);
+        $password = hash("sha256",$password);
         //Query update data
         $query = "UPDATE user SET
                     username = '$username',

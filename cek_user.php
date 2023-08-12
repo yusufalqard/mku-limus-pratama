@@ -6,19 +6,20 @@
     // menangkap data yang dikirim dari form login
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $password = password_hash($password,PASSWORD_DEFAULT);
+    
     // menyeleksi data user dengan username dan password yang sesuai
     $login = mysqli_query($conn,"SELECT * FROM user WHERE username='$username' and password='$password'");
    // menghitung jumlah data yang ditemukan
     $cek = mysqli_num_rows($login);
-    // cek apakah username dan password di temukan pada database
-    if($cek > 0){
-	    $data = mysqli_fetch_assoc($login);
     //Cek Validasi
     if($cek > 0){
+        $data = mysqli_fetch_assoc($login);
         // cek jika user login sebagai admin
         if($data['leveluser']=="admin"){
             // buat session login dan username
             $_SESSION['username'] = $username;
+            $_SESSION['password'] = password_hash($password,PASSWORD_DEFAULT);
             $_SESSION['leveluser'] = "admin";
             // alihkan ke halaman dashboard admin
             header("location:admin/admin_page.php");
@@ -28,7 +29,7 @@
             $_SESSION['username'] = $username;
             $_SESSION['leveluser'] = "guest";
             // alihkan ke halaman dashboard guest
-            header("location:halaman_guest.php");
+            header("location:pengguna/lihatrekap.php");
         // cek jika user login sebagai pengurus
         }else if($data['leveluser']=="pengurus"){
             // buat session login dan username
@@ -43,5 +44,4 @@
     }else{
         header("location:index.php?pesan=gagal");
     }  
-}
 ?>
