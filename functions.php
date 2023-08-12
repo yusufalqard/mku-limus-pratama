@@ -28,7 +28,7 @@
             return false;
         }
         //Encryption Password yang diinput oleh user
-        $password = password_hash($password,PASSWORD_DEFAULT);
+        $password = hash("SHA256",$password);
         //Tambahkan User Registrasi baru ke database
         mysqli_query($conn,"INSERT INTO user VALUES('','$username','$password','guest')");
         return mysqli_affected_rows($conn);

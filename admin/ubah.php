@@ -70,20 +70,19 @@
         <h1>Ubah Data Pengguna - Admin Access</h1>
             <form action="" method="POST">
                 <input type="hidden" name="id" value="<?= $akses["id"] ?>">
-                <ul>
+                <ul class="">
                     <li>
-                        <label for="username">Username :</label>
+                        <label for="username">Username :</label><br>
                         <input type="text" name="username" id="username" required value="<?= $akses["username"];?>">
-                        <br>
+                        <br><br>
                     </li>
                     <li>
                         <label for="password">Password :</label>
-                        <input type="password" name="password" id="password" value="" placeholder="Ubah Passwordnya">
                         <br>
+                        <input type="password" name="password" id="password" value="" placeholder="Ubah Passwordnya"><br><br>
                     </li>
                     <li>
                         <label for="leveluser">Level User :</label>
-                        <br>
                         <select id="leveluser" name="leveluser">
                             <option value="admin">admin</option>
                             <option value="pengurus">pengurus</option>

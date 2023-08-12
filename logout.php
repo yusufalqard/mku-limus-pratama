@@ -3,9 +3,6 @@
     $_SESSION = [];
     session_unset();
     session_destroy();
-
-    // // setcookie('id','',time()-3600);
-    // // setcookie('key','',time()-3600)
+    echo "<script>alert('Berhasil logout dari aplikasi MKU');</script>";
     header("Location:index.php");
-    exit;
 ?>
