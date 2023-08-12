@@ -1,6 +1,13 @@
 <?php 
 	require '../functions.php';
     $cekrekap = query("SELECT*FROM rekapdata");
+    //Query untuk pagination
+    $jumlahdata=3;
+    $jumlahperdata=count(query("SELECT*FROM rekapdata"));
+    $pageHal=ceil($jumlahperdata/$jumlahdata);
+    $pageaktif=(isset($_GET["page"]) ) ? $_GET["page"] : 1;
+    $pageawal=($jumlahdata*$pageaktif)-$jumlahdata;
+    $cekrekap=query("SELECT*FROM rekapdata LIMIT $pageawal,$jumlahdata");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,9 +64,23 @@
     
 	<section class="maindsb">
             <center>
-			<h1 class="cekrekap">Silahkan pilih data berdasarkan tabel dibawah ini</h1>
+			<h1 class="cekrekap">Berikut data yang direkap berdasarkan tabel dibawah ini</h1>
             <button><a href=tambah.php class="cetak">Tambah</a></button>
             <br><br>
+            <!-- Navigasi untuk pagination -->
+			<?php if($pageaktif>1) :?>
+				<a href="?page=<?=$pageaktif-1;?>">&laquo;</a>
+			<?php endif;?>
+				<?php for($i=1; $i<=$pageHal; $i++):?>
+					<?php if($i==$pageaktif):?>
+						<a class="pageWarna" href="?page=<?= $i;?>"><?=$i;?></a>
+					<?php else :?>
+						<a href="?page=<?= $i;?>"><?=$i;?></a>
+					<?php endif;?>
+				<?php endfor;?>
+			<?php if($pageaktif<$pageHal) :?>
+				<a href="?page=<?=$pageaktif+1;?>">&raquo;</a>
+			<?php endif;?>
             </center>
             <table class="cekrekaptbladm" border="1" cellpadding="10" cellspacing="0">
             <tr>

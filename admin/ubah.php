@@ -68,6 +68,8 @@
     </script>
     <section class="maindsb">
         <h1>Ubah Data Pengguna - Admin Access</h1>
+        <button><a href="../admin/rekapdata.php" class="cetak">Kembali</a></button>
+        <br></br>
             <form action="" method="POST">
                 <input type="hidden" name="id" value="<?= $akses["id"] ?>">
                 <ul class="ubahbgrd">

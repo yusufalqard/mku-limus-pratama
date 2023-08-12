@@ -65,6 +65,8 @@
     </script>
     <section class="maindsb">
         <h1>Tambah Cek Rekap Data</h1>
+            <button><a href="../admin/cekrekap.php" class="cetak">Kembali</a></button>
+            <br><br>
             <form action="" method="POST">
                 <ul class="ubahbgrd">
                     <li>

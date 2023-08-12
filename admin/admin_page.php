@@ -63,8 +63,12 @@
 		});
 	</script>
 	<section class="maindsb">
+			<?php 
+				date_default_timezone_set("Asia/Jakarta"); 
+				echo date('l, H:i:sa');
+			?>
 			<h1>List Data Laporan Terbaru</h1>
-			<!-- navigasi untuk pagination -->
+			<!-- Navigasi untuk pagination -->
 			<?php if($pageaktif>1) :?>
 				<a href="?page=<?=$pageaktif-1;?>">&laquo;</a>
 			<?php endif;?>
