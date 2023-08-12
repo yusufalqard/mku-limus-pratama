@@ -42,7 +42,7 @@
         $leveluser = htmlspecialchars($data["leveluser"]);
         //Encryption Password yang diubah oleh admin
         $password = hash("sha256",$password);
-        //Query update data
+        //Query update data UNTUK user
         $query = "UPDATE user SET
                     username = '$username',
                     password = '$password',
@@ -50,6 +50,23 @@
                     WHERE id = $id
                     ";
         mysqli_query($conn,$query);
+        return mysqli_affected_rows($conn);
+    }
+    //Function untuk update data pada tabel rekap data
+    function updatedata($data){
+        global $conn;
+        $id = $data["id"];
+        $deskripsi = htmlspecialchars($data["deskripsi"]);
+        $tgl = $data["tgl"];
+        $nominal = $data["nominal"];
+        //Query update data untuk Rekap Data
+        $query = "UPDATE rekapdata SET
+                    deskripsi = '$deskripsi',
+                    tgl = '$tgl',
+                    nominal = '$nominal'
+                    WHERE id = $id
+                    ";
+        mysqli_query($conn, $query);
         return mysqli_affected_rows($conn);
     }
 ?>
