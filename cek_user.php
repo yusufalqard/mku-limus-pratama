@@ -6,10 +6,10 @@
     // menangkap data yang dikirim dari form login
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $password = password_hash($password,PASSWORD_DEFAULT);
+    $verify = hash("SHA256",$password);
     
     // menyeleksi data user dengan username dan password yang sesuai
-    $login = mysqli_query($conn,"SELECT * FROM user WHERE username='$username' and password='$password'");
+    $login = mysqli_query($conn,"SELECT * FROM user WHERE username='$username' and password='$verify'");
    // menghitung jumlah data yang ditemukan
     $cek = mysqli_num_rows($login);
     //Cek Validasi
@@ -17,9 +17,9 @@
         $data = mysqli_fetch_assoc($login);
         // cek jika user login sebagai admin
         if($data['leveluser']=="admin"){
+            echo "<script>alert('Anda berhasil sebagai admin')</script>";
             // buat session login dan username
             $_SESSION['username'] = $username;
-            $_SESSION['password'] = password_hash($password,PASSWORD_DEFAULT);
             $_SESSION['leveluser'] = "admin";
             // alihkan ke halaman dashboard admin
             header("location:admin/admin_page.php");
