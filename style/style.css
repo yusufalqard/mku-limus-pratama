@@ -343,3 +343,8 @@ div.botLogoFooter{
     font-family: 'Times New Roman', Times, serif;
     margin-left:30%;
 }
+a.pageWarna{
+    font-weight: bold;
+    color:burlywood;
+    text-decoration: none;
+}

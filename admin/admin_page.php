@@ -1,8 +1,16 @@
 <?php 
 	require '../session_mulai.php';
 	require '../functions.php';
-	$admindata = query("SELECT*FROM rekapdata");
+	// $admindata = query("SELECT*FROM rekapdata");
 	$datauser=query("SELECT*FROM user");
+	//Query untuk pagination
+				$jumlahdata=3;
+				$jumlahperdata=count(query("SELECT*FROM rekapdata"));
+				$pageHal=ceil($jumlahperdata/$jumlahdata);
+				$pageaktif=(isset($_GET["page"]) ) ? $_GET["page"] : 1;
+				$pageawal=($jumlahdata*$pageaktif)-$jumlahdata;
+				$admindata=query("SELECT*FROM rekapdata LIMIT $pageawal,$jumlahdata");
+			
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +64,20 @@
 	</script>
 	<section class="maindsb">
 			<h1>List Data Laporan Terbaru</h1>
+			<!-- navigasi untuk pagination -->
+			<?php if($pageaktif>1) :?>
+				<a href="?page=<?=$pageaktif-1;?>">&laquo;</a>
+			<?php endif;?>
+				<?php for($i=1; $i<=$pageHal; $i++):?>
+					<?php if($i==$pageaktif):?>
+						<a class="pageWarna" href="?page=<?= $i;?>"><?=$i;?></a>
+					<?php else :?>
+						<a href="?page=<?= $i;?>"><?=$i;?></a>
+					<?php endif;?>
+				<?php endfor;?>
+			<?php if($pageaktif<$pageHal) :?>
+				<a href="?page=<?=$pageaktif+1;?>">&raquo;</a>
+			<?php endif;?>
 			<table class="cekrekapadm" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
