@@ -40,7 +40,7 @@
 					<a href="../admin/kontak.php">Hubungi Kami</a>
 				</li>
 				<li>
-					<a href="logout.php">Logout</a>
+					<a href="../logout.php">Logout</a>
 				</li>
 				<li class="kosongbesar"></li>
 				<li class="botIkon">

@@ -37,7 +37,7 @@
 					<a href="../admin/kontak.php">Hubungi Kami</a>
 				</li>
                 <li>
-					<a href="logout.php">Logout</a>
+                    <a href="../logout.php">Logout</a>
 				</li>
 				<li class="kosongbesar"></li>
 				<li class="botIkon">
@@ -58,7 +58,7 @@
 	<section class="maindsb">
             <center>
 			<h1 class="cekrekap">Silahkan pilih data berdasarkan tabel dibawah ini</h1>
-            <button><a href=tambah.php?>Tambah</a></button>
+            <button><a href=tambah.php class="cetak">Tambah</a></button>
             <br><br>
             </center>
             <table class="cekrekaptbladm" border="1" cellpadding="10" cellspacing="0">
@@ -79,7 +79,7 @@
                 <td><?= $row["tgl"] ?></td>
                 <td>Rp.<?= $row["nominal"] ?></td>
                 <td>
-                    <a href="ubah.php?id=<?= $row["id"];?>">Ubah</a>
+                    <a href="ubahdata.php?id=<?= $row["id"];?>">Ubah</a>
                     <a href="hapus.php?id=<?= $row["id"];?>" onclick="return confirm('Yakin Hapus Data');">Hapus</a>
                 </td>
             </tr>
