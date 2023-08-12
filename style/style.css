@@ -348,3 +348,9 @@ a.pageWarna{
     color:burlywood;
     text-decoration: none;
 }
+ul.ubahbgrd{
+    background-color: #81caec;
+    width:20%;
+    box-shadow: 0px 0px 100px 4px #d6d6d6;
+    box-sizing: content-box;   
+}
