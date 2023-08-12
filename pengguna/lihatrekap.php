@@ -40,18 +40,18 @@
 		</nav>
 	</header>
     <script type="text/javascript">
-		$(document).ready(function(){
-			$('.tombolmenu').click(function(){
-				$('.listmenu').toggleClass('sidebar-menu');
-			});
-		});
-	</script>
+		  $(document).ready(function(){
+			  $('.tombolmenu').click(function(){
+				  $('.listmenu').toggleClass('sidebar-menu');
+			  });
+		  });
+	  </script>
 	<section class="maindsb">
-    <p>Data Infaq Jum'at - Preview GUEST Mode</p>
+      <p>Data Infaq Jum'at - Preview GUEST Mode</p>
     <button type="button"><a href="../pengguna/cetakguest.php" class="cetak" target="_blank">Cetak Laporan</a></button>
-    <br>
-    <br>
-    <table name="data" class="cekrekaptbl" border="1" cellpadding="10" cellspacing="0">
+      <br>
+      <br>
+      <table name="data" class="cekrekaptbl" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
                 <th>Deskripsi</th>

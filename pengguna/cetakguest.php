@@ -12,10 +12,12 @@
 	<script type="text/javascript" src="../js/jquery.js"></script>
 </head>
 <body>
- 
+    <center>
 	<div class="cetaklaporanguest">
-        <h2>Laporan Infaq Jum'at <br> Masjid Khoiru Ummah</h2>
- 
+        <h2>Laporan Infaq Jum'at Masjid Khoiru Ummah</h2>
+        <p>Assalamualaikum wr.wb</p>
+        <p>Berikut merupakan data infaq jum'at tiap mingguan terbaru yang diakumulasikan<p>
+
         <table class="cekrekaptbl" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
@@ -46,7 +48,14 @@
                 </td>
             </tr>
         </table> 
-		<br/>
-            </div>
+		<br>
+    </div>
+    <div class="mengetahui">
+        <p>Bogor, <?= date("d F Y");?></p>
+        <p>Mengetahui</p>
+        <p>Taufik</p>
+        <p>(Pengurus DKM)</p>
+    </div>
+    </center>
 </body>
 </html>

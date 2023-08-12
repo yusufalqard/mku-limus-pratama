@@ -26,7 +26,7 @@
 					<a href="../admin/admin_page.php">Dashboard</a>
 				</li>
     			<li>
-					<a href="../admin/rekapdata.php">Rekap Data</a>
+					<a href="../admin/rekapdata.php">Data User</a>
 				</li>
     			<li>
 					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>
@@ -56,14 +56,13 @@
 		});
 	</script>
 	<section class="maindsb">
-			<h1>Data Rekap Laporan Terbaru</h1>
+			<h1>List Data Laporan Terbaru</h1>
 			<table class="cekrekapadm" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
                 <th>Deskripsi</th>
                 <th>Tanggal</th>
                 <th>Total</th>
-				<th>Action</th>
             </tr>
             <!--Membuat Perulangan dengan PHP untuk tabel id-->
             <?php $i = 1;  ?>
@@ -72,22 +71,15 @@
             <tr>
                 <td><?= $i; ?></td>
                 <td><?= $cekdb["deskripsi"] ?></td>
-                <td><?= $cekdb["tgl"] ?></td>
+                <td><?= date("d F Y",strtotime($cekdb["tgl"])); ?></td>
                 <td>Rp<?= $cekdb["nominal"] ?></td>
-                <td>
-                    <a href="ubah.php?id=<?= $cekdb["id"];?>">Ubah</a>
-                    <a href="hapus.php?id=<?= $cekdb["id"];?>" onclick="return confirm('Yakin Hapus Data');">Hapus</a>
-                </td>
             </tr>
 
             <?php $i++; ?>
             <?php endforeach; ?>
         </table>
-		<div class="Laporan">
-			<h1>Cetak Laporan berdasarkan data</h1>
-		</div>	
 		<div class="rekapusertbl">
-			<h1>Rekap Data Pengguna</h1>
+			<h1>List Data Pengguna</h1>
 			<table class="cekrekapadm" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
@@ -108,8 +100,5 @@
         </table>
 		</div>
 	</section>
-				<!-- <div class="botLogoFooter" id="footer">
-                        <p>© 2023 Masjid Khoiru Ummah, Org. All rights reserved</p>
-				</div> -->
   </body>
 </html>

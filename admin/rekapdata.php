@@ -24,7 +24,7 @@
 					<a href="../admin/admin_page.php">Dashboard</a>
 				</li>
     			<li>
-					<a href="../admin/rekapdata.php">Rekap Data</a>
+					<a href="../admin/rekapdata.php">Data User</a>
 				</li>
     			<li>
 					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>

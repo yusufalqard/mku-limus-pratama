@@ -175,13 +175,12 @@ div.botLogoFooter{
 	padding: 10px;
 	font-size: 14pt;	
 }
-/* Section untuk Rekap Data */
+/* Section untuk Rekap Data PENGGUNA */
 .cekrekaptbl{
-    font-size: 14pt;
+    font-size: 12pt;
     border-collapse:collapse;
     width:70%;
     font-family: Arial;
-    float:left;
     border: 1px solid black;
 }
 .cekrekaptbl, th {
@@ -196,8 +195,8 @@ div.botLogoFooter{
     text-align: center;
 }
 .cekrekaptbl tr {
-    background-color: #d3dcdd88;
-    color:whitesmoke;
+    background-color: #ffffff88;
+    color:black;
 }
 .cekrekaptbl tr:nth-child(even) {
     background-color: #ffffff;
@@ -206,7 +205,7 @@ div.botLogoFooter{
 }
 /* Section untuk Dahboard Cek Rekap Data as Admin*/
 .cekrekapadm{
-    font-size: 10pt;
+    font-size: 15pt;
     border-collapse:collapse;
     width:90%;
     font-family: Arial;
@@ -240,6 +239,9 @@ div.botLogoFooter{
     color: black;
     text-decoration: none;
 }
+.cetaklaporanguest{
+    text-align: center;
+}
 .Laporan{
     float: right;
     margin-right: 200px;
@@ -250,4 +252,8 @@ div.botLogoFooter{
 }
 .rekapusertbl .p{
     font-size: 10pt;
+}
+.mengetahui{
+    float:left;
+    font-size: 12pt;
 }

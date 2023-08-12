@@ -2,7 +2,7 @@
     //Fungsi Functions untuk semua
     require 'functions.php';
     //Atur Session Start
-    session_start();
+    require 'session_mulai.php';
     //Cek Cookie
     if  (isset($_COOKIE['id']) && isset($_COOKIE['key'])){
         $id = $_COOKIE['id'];

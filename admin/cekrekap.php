@@ -25,7 +25,7 @@
 					<a href="../admin/admin_page.php">Dashboard</a>
 				</li>
     			<li>
-					<a href="../admin/rekapdata.php">Rekap Data</a>
+					<a href="../admin/rekapdata.php">Data User</a>
 				</li>
     			<li>
 					<a href="../admin/rekaplaporan.php">Rekap Laporan</a>
@@ -81,20 +81,7 @@
             <?php endforeach; ?>
         </table>
             <div class="rekapdata-container">
-        
-        <h1>LoreIpsumSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
-
-SSH also refers to the suite of utilities that implement the SSH protocol. Secure Shell provides strong password authentication and public key authentication, as well as encrypted data communications between two computers connecting over an open network, such as the internet.
-
-In addition to providing strong encryption, SSH is widely used by network administrators to manage systems and applications remotely, enabling them to log in to another computer over a network, execute commands and move files from one computer to another.
-
-SSH refers both to the cryptographic network protocol and to the suite of utilities that implement that protocol. SSH uses the client-server model, connecting a Secure Shell client application, which is the end where the session is displayed, with an SSH server, which is the end where the session runs. SSH implementations often include support for application protocols used for terminal emulation or file transfers.
-
-SSH can also be used to create secure tunnels for other application protocols, for example, to securely run X Window System graphical sessions remotely. An SSH server, by default, listens on the standard Transmission Control Protocol (TCP) port 22.
-
-How does SSH work?
-Secure Shell was created to replace insecure terminal emulation or login programs, such as Telnet, rlogin (remote login) and rsh (remote shell). SSH enables the same functions -- logging in to and running terminal sessions on remote systems. SSH also replaces file transfer programs, such as File Transfer Protocol (FTP) and rcp (remote copy).</h1>
-                    
+            </div>
 	</section>
                 <div class="botLogoFooter" id="footer">
                     <p>© 2023 Masjid Khoiru Ummah, Org. All rights reserved</p>
