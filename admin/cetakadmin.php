@@ -26,14 +26,12 @@
             <?php $i = 1;  ?>
             <!-- Memanggil perulangan foreach dari tabel rekapdata -->
             <?php foreach($datalapor as $row) : ?>
-            <tr>
-                <td><?= $i; ?></th>
-                <td><?= $row["deskripsi"] ?></td>
-                <td><?=date("d F Y",strtotime($row["tgl"])); ?></td>
-                <td>Rp.<?= $row["nominal"] ?></td>
-
-            </tr>
-
+                <tr>
+                    <td><?= $i; ?></th>
+                    <td><?= $row["deskripsi"] ?></td>
+                    <td><?=date("d F Y",strtotime($row["tgl"])); ?></td>
+                    <td>Rp.<?= $row["nominal"] ?></td>
+                </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
             <tr>
@@ -51,7 +49,7 @@
         <p>Bogor, <?= date("d F Y");?></p>
         <p>Mengetahui</p>
         <br>
-        <p>(Pengurus DKM)</p>
+        <p>(Admin)</p>
     </div>
 </body>
 </html>

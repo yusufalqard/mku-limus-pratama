@@ -52,13 +52,27 @@
         mysqli_query($conn,$query);
         return mysqli_affected_rows($conn);
     }
+    //Function untuk tambah data baru sebagai admin atau pengurus
+    function tambah($data){
+        //Mengacu pada $conn yang berada di luar function
+        global $conn;
+        $deskripsi = htmlspecialchars($data["deskripsi"]);
+        $tgl = date($data["tgl"]);
+        $nominal = htmlspecialchars($data["nominal"]);
+        //Query insert data
+        $query = "INSERT INTO rekapdata VALUES
+                    ('','$deskripsi','$tgl','$nominal')
+                    ";
+        mysqli_query($conn,$query);
+        return mysqli_affected_rows($conn);
+    }
     //Function untuk update data pada tabel rekap data
     function updatedata($data){
         global $conn;
         $id = $data["id"];
         $deskripsi = htmlspecialchars($data["deskripsi"]);
-        $tgl = $data["tgl"];
-        $nominal = $data["nominal"];
+        $tgl = date($data["tgl"]);
+        $nominal = htmlspecialchars($data["nominal"]);
         //Query update data untuk Rekap Data
         $query = "UPDATE rekapdata SET
                     deskripsi = '$deskripsi',
@@ -66,7 +80,7 @@
                     nominal = '$nominal'
                     WHERE id = $id
                     ";
-        mysqli_query($conn, $query);
+        mysqli_query($conn,$query);
         return mysqli_affected_rows($conn);
     }
 ?>
