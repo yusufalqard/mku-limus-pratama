@@ -70,7 +70,7 @@
         <h1>Ubah Data Pengguna - Admin Access</h1>
             <form action="" method="POST">
                 <input type="hidden" name="id" value="<?= $akses["id"] ?>">
-                <ul class="">
+                <ul class="ubahbgrd">
                     <li>
                         <label for="username">Username :</label><br>
                         <input type="text" name="username" id="username" required value="<?= $akses["username"];?>">
@@ -88,7 +88,7 @@
                             <option value="pengurus">pengurus</option>
                             <option value="guest">guest</option>
                         </select>
-                        <br>
+                        <br><br>
                     </li>
                     <li>
                         <button type="submit" name="submit">Ubah Data!</button>
