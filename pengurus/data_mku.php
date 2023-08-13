@@ -69,11 +69,7 @@
                 <td><?= $row["leveluser"] ?></td>
                 <div class="decorlink">
                 <td>
-                    <a href="ubah.php?id=<?= $row["id"];?>">Ubah</a>
-                    <a href="hapus.php?id=<?= $row["id"];?>" 
-                        onclick="return confirm('Apakah anda yakin menghapus data yang dipilih?');">
-                        Hapus
-                    </a>
+                    <a href="update.php?id=<?= $row["id"];?>">Ubah</a>
                 </td>
                 </div>
             </tr>

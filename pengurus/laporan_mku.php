@@ -52,7 +52,7 @@
 	</script>
 	<section class="maindsb">
 			<h1>List Data Laporan Terbaru</h1>
-            <button type="button"><a href="../admin/cetakadmin.php" class="cetak" target="_blank">Cetak Laporan</a></button>
+            <button type="button"><a href="../pengurus/print_cetak.php" class="cetak" target="_blank">Cetak Laporan</a></button>
             <br>
             <br>
         <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">

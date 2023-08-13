@@ -14,7 +14,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cek Data Masjid - [Pengurus]MKU</title>
+    <title>Cek Data Masjid - [Pengurus] MKU</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	<script type="text/javascript" src="../js/jquery.js"></script>
     
@@ -62,7 +62,7 @@
 	<section class="maindsb">
             <center>
 			<h1 class="cekrekap">Berikut data yang direkap berdasarkan tabel dibawah ini</h1>
-            <button><a href=tambah.php class="cetak">Tambah</a></button>
+            <button><a href="add.php" class="cetak">Tambah</a></button>
             <br><br>
             <!-- Navigasi untuk pagination -->
 			<?php if($pageaktif>1) :?>
@@ -97,7 +97,7 @@
                 <td><?= $row["tgl"] ?></td>
                 <td>Rp.<?= $row["nominal"] ?></td>
                 <td>
-                    <a href="ubahdata.php?id=<?= $row["id"];?>">Ubah</a>
+                    <a href="update_data.php?id=<?= $row["id"];?>">Ubah</a>
                     <a href="hapus.php?id=<?= $row["id"];?>" onclick="return confirm('Yakin Hapus Data');">Hapus</a>
                 </td>
             </tr>
@@ -105,8 +105,6 @@
             <?php $i++; ?>
             <?php endforeach; ?>
         </table>
-            <div class="rekapdata-container">
-            </div>
 	</section>
                 <div class="botLogoFooter" id="footer">
                     <p>© 2023 Masjid Khoiru Ummah, Org. All rights reserved</p>
