@@ -1,5 +1,13 @@
 <?php
     require 'functions.php';
+    require 'session_mulai.php';
+    if(isset($_GET['pesan'])){
+		if($_GET['pesan']=="gagal"){
+			echo "<script>
+                    alert('Username dan Password tidak sesuai!');
+                </script>";
+		}
+	}
     if(isset($_POST["Register"])){
         //Mengecek apakah user sudah terdaftar atau belum
         if(registrasi($_POST)>0){
@@ -10,13 +18,6 @@
             echo mysqli_error($conn);
         }
     }
-    if(isset($_GET['pesan'])){
-		if($_GET['pesan']=="gagal"){
-			echo "<script>
-                    alert('Username dan Password tidak sesuai!');
-                </script>";
-		}
-	}
 ?>
 <html>
 <head>

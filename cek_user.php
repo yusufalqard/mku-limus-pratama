@@ -3,11 +3,21 @@
     require 'session_mulai.php';
     //Panggil fungsi dan koneksi
     require 'functions.php';
+    if(isset($_POST["Register"])){
+        //Mengecek apakah user sudah terdaftar atau belum
+        if(registrasi($_POST)>0){
+            echo "<script>
+                    alert('Anda telah terdaftar menjadi Guest User, Silahkan login kembali!');
+                </script>";
+        }else{
+            echo mysqli_error($conn);
+        }
+    }
     // menangkap data yang dikirim dari form login
     $username = $_POST['username'];
     $password = $_POST['password'];
+    // Replace string Method Post password dengan password hash SHA256
     $verify = hash("SHA256",$password);
-    
     // menyeleksi data user dengan username dan password yang sesuai
     $login = mysqli_query($conn,"SELECT * FROM user WHERE username='$username' and password='$verify'");
    // menghitung jumlah data yang ditemukan
@@ -36,7 +46,7 @@
             $_SESSION['username'] = $username;
             $_SESSION['leveluser'] = "pengurus";
             // alihkan ke halaman dashboard pengurus
-            header("location:halaman_pengurus.php");
+            header("location:pengurus/mku_page.php");
         }else{
             // alihkan ke halaman login kembali
             header("location:index.php?pesan=gagal");

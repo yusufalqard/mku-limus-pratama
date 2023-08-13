@@ -1,32 +1,31 @@
 <?php 
-	require '../session_mulai.php';
 	require '../functions.php';
-	// $admindata = query("SELECT*FROM rekapdata");
-	$datauser=query("SELECT*FROM user");
-	//Query untuk pagination
-				$jumlahdata=3;
-				$jumlahperdata=count(query("SELECT*FROM rekapdata"));
-				$pageHal=ceil($jumlahperdata/$jumlahdata);
-				$pageaktif=(isset($_GET["page"]) ) ? $_GET["page"] : 1;
-				$pageawal=($jumlahdata*$pageaktif)-$jumlahdata;
-				$admindata=query("SELECT*FROM rekapdata LIMIT $pageawal,$jumlahdata");
-			
+    $cekrekap = query("SELECT*FROM rekapdata");
+    //Query untuk pagination
+    $jumlahdata=3;
+    $jumlahperdata=count(query("SELECT*FROM rekapdata"));
+    $pageHal=ceil($jumlahperdata/$jumlahdata);
+    $pageaktif=(isset($_GET["page"]) ) ? $_GET["page"] : 1;
+    $pageawal=($jumlahdata*$pageaktif)-$jumlahdata;
+    $cekrekap=query("SELECT*FROM rekapdata LIMIT $pageawal,$jumlahdata");
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - [Pengurus] MKU</title>
+    <title>Cek Data Masjid - [Pengurus]MKU</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	<script type="text/javascript" src="../js/jquery.js"></script>
+    
   </head>
 <body class="adminPAGE">
    <header>
+	<!-- Blank -->
     <button class="tombolmenu">Menu</button>
 		<nav class="listmenu">
 			<ul>
-				<li class="kosong">
+                <li class="kosong">
 					<img src="../gambar/logomasjid.png">
 				</li>
     			<li>
@@ -59,13 +58,13 @@
 			});
 		});
 	</script>
+    
 	<section class="maindsb">
-			<?php 
-				date_default_timezone_set("Asia/Jakarta"); 
-				echo date('l, H:i:sa');
-			?>
-			<h1>List Data Laporan Terbaru</h1>
-			<!-- Navigasi untuk pagination -->
+            <center>
+			<h1 class="cekrekap">Berikut data yang direkap berdasarkan tabel dibawah ini</h1>
+            <button><a href=tambah.php class="cetak">Tambah</a></button>
+            <br><br>
+            <!-- Navigasi untuk pagination -->
 			<?php if($pageaktif>1) :?>
 				<a href="?page=<?=$pageaktif-1;?>">&laquo;</a>
 			<?php endif;?>
@@ -79,28 +78,38 @@
 			<?php if($pageaktif<$pageHal) :?>
 				<a href="?page=<?=$pageaktif+1;?>">&raquo;</a>
 			<?php endif;?>
-			<table class="cekrekapadm" border="1" cellpadding="10" cellspacing="0">
+            </center>
+            <table class="cekrekaptbladm" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
                 <th>Deskripsi</th>
                 <th>Tanggal</th>
                 <th>Total</th>
+                <th>Tindakan</th>
             </tr>
             <!--Membuat Perulangan dengan PHP untuk tabel id-->
             <?php $i = 1;  ?>
-            <!-- Memanggil perulangan foreach dari tabel admindata sebagai cekdb -->
-            <?php foreach($admindata as $cekdb) : ?>
+            <!-- Memanggil perulangan foreach dari tabel rekapdata -->
+            <?php foreach($cekrekap as $row) : ?>
             <tr>
                 <td><?= $i; ?></td>
-                <td><?= $cekdb["deskripsi"] ?></td>
-                <td><?= date("d F Y",strtotime($cekdb["tgl"])); ?></td>
-                <td>Rp<?= $cekdb["nominal"] ?></td>
+                <td><?= $row["deskripsi"] ?></td>
+                <td><?= $row["tgl"] ?></td>
+                <td>Rp.<?= $row["nominal"] ?></td>
+                <td>
+                    <a href="ubahdata.php?id=<?= $row["id"];?>">Ubah</a>
+                    <a href="hapus.php?id=<?= $row["id"];?>" onclick="return confirm('Yakin Hapus Data');">Hapus</a>
+                </td>
             </tr>
 
             <?php $i++; ?>
             <?php endforeach; ?>
         </table>
-		</div>
+            <div class="rekapdata-container">
+            </div>
 	</section>
+                <div class="botLogoFooter" id="footer">
+                    <p>© 2023 Masjid Khoiru Ummah, Org. All rights reserved</p>
+                </div>
   </body>
 </html>

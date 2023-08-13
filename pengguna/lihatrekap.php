@@ -22,10 +22,7 @@
     			<li>
 					<a href="../pengguna/lihatrekap.php">Lihat Rekap Data</a>
 				</li>
-    			<li>
-					<a href="../pengguna/user_page.php">Informasi User</a>
-				</li>
-    			<li>
+    		<li>
 					<a href="../pengguna/kontak.php">Hubungi Kami</a>
 				</li>
         <li>

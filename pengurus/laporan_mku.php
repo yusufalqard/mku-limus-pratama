@@ -1,32 +1,23 @@
-<?php 
-	require '../session_mulai.php';
-	require '../functions.php';
-	// $admindata = query("SELECT*FROM rekapdata");
-	$datauser=query("SELECT*FROM user");
-	//Query untuk pagination
-				$jumlahdata=3;
-				$jumlahperdata=count(query("SELECT*FROM rekapdata"));
-				$pageHal=ceil($jumlahperdata/$jumlahdata);
-				$pageaktif=(isset($_GET["page"]) ) ? $_GET["page"] : 1;
-				$pageawal=($jumlahdata*$pageaktif)-$jumlahdata;
-				$admindata=query("SELECT*FROM rekapdata LIMIT $pageawal,$jumlahdata");
-			
+<?php
+    require '../functions.php';
+    $dbdata = query("SELECT*FROM user");
+    $datalapor = query("SELECT*FROM rekapdata");
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - [Pengurus] MKU</title>
+    <title>Rekap Laporan - Pengurus</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	<script type="text/javascript" src="../js/jquery.js"></script>
   </head>
-<body class="adminPAGE">
+  <body class="adminPAGE">
    <header>
     <button class="tombolmenu">Menu</button>
 		<nav class="listmenu">
 			<ul>
-				<li class="kosong">
+                <li class="kosong">
 					<img src="../gambar/logomasjid.png">
 				</li>
     			<li>
@@ -60,26 +51,11 @@
 		});
 	</script>
 	<section class="maindsb">
-			<?php 
-				date_default_timezone_set("Asia/Jakarta"); 
-				echo date('l, H:i:sa');
-			?>
 			<h1>List Data Laporan Terbaru</h1>
-			<!-- Navigasi untuk pagination -->
-			<?php if($pageaktif>1) :?>
-				<a href="?page=<?=$pageaktif-1;?>">&laquo;</a>
-			<?php endif;?>
-				<?php for($i=1; $i<=$pageHal; $i++):?>
-					<?php if($i==$pageaktif):?>
-						<a class="pageWarna" href="?page=<?= $i;?>"><?=$i;?></a>
-					<?php else :?>
-						<a href="?page=<?= $i;?>"><?=$i;?></a>
-					<?php endif;?>
-				<?php endfor;?>
-			<?php if($pageaktif<$pageHal) :?>
-				<a href="?page=<?=$pageaktif+1;?>">&raquo;</a>
-			<?php endif;?>
-			<table class="cekrekapadm" border="1" cellpadding="10" cellspacing="0">
+            <button type="button"><a href="../admin/cetakadmin.php" class="cetak" target="_blank">Cetak Laporan</a></button>
+            <br>
+            <br>
+        <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
                 <th>Deskripsi</th>
@@ -88,19 +64,28 @@
             </tr>
             <!--Membuat Perulangan dengan PHP untuk tabel id-->
             <?php $i = 1;  ?>
-            <!-- Memanggil perulangan foreach dari tabel admindata sebagai cekdb -->
-            <?php foreach($admindata as $cekdb) : ?>
+            <!-- Memanggil perulangan foreach dari tabel rekapdata -->
+            <?php foreach($datalapor as $row) : ?>
             <tr>
-                <td><?= $i; ?></td>
-                <td><?= $cekdb["deskripsi"] ?></td>
-                <td><?= date("d F Y",strtotime($cekdb["tgl"])); ?></td>
-                <td>Rp<?= $cekdb["nominal"] ?></td>
+                <td><?= $i; ?></th>
+                <td><?= $row["deskripsi"] ?></td>
+                <td><?=date("d F Y",strtotime($row["tgl"])); ?></td>
+                <td>Rp.<?= $row["nominal"] ?></td>
+
             </tr>
 
             <?php $i++; ?>
             <?php endforeach; ?>
+            <tr>
+                <th colspan="3">Total</th>
+                <td>
+                    Rp.<?=
+                        $row["nominal"];
+                    ?>
+                </td>
+            </tr>
         </table>
-		</div>
+        </div>
 	</section>
-  </body>
+</body>
 </html>
