@@ -14,6 +14,7 @@
 <body class="adminPAGE">
 	<section class="maindsb">
         <h2><?= date("l, d F Y");?></h2>
+        <p>Berikut rekap data laporan terbaru saat ini</p>
         <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
@@ -50,5 +51,8 @@
         <br>
         <p>(Pengurus DKM)</p>
     </div>
+    <script>
+        window.print();
+    </script>
 </body>
 </html>

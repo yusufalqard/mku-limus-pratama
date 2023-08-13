@@ -57,5 +57,8 @@
         <p>(Pengurus DKM)</p>
     </div>
     </center>
+    <script>
+        window.print();
+    </script>
 </body>
 </html>

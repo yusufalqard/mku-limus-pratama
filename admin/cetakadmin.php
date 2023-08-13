@@ -1,6 +1,5 @@
 <?php
     require '../functions.php';
-    $dbdata = query("SELECT*FROM user");
     $datalapor = query("SELECT*FROM rekapdata");
 ?>
 <!DOCTYPE html>
@@ -14,7 +13,8 @@
   </head>
 <body class="adminPAGE">
 	<section class="maindsb">
-        <h2><?= date("l, d F Y");?></h2>
+        <h1><?= date("l, d F Y");?></h1>
+        <p>Berikut adalah list data laporan terbaru saat ini</p>
         <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
@@ -51,5 +51,8 @@
         <br>
         <p>(Admin)</p>
     </div>
+    <script>
+        window.print();
+    </script>
 </body>
 </html>
