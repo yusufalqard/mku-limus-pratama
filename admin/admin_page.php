@@ -97,7 +97,7 @@
                 <td><?= $i; ?></td>
                 <td><?= $cekdb["deskripsi"] ?></td>
                 <td><?= date("d F Y",strtotime($cekdb["tgl"])); ?></td>
-                <td>Rp<?= $cekdb["nominal"] ?></td>
+                <td>Rp<?= number_format($cekdb["nominal"]);?></td>
             </tr>
 
             <?php $i++; ?>

@@ -13,8 +13,8 @@
   </head>
 <body class="adminPAGE">
 	<section class="maindsb">
-        <h1><?= date("l, d F Y");?></h1>
-        <p>Berikut adalah list data laporan terbaru saat ini</p>
+        <h2>Masjid Khoiru Ummah</h2>
+        <p>Mengetahui bahwa data laporan keseluruhan pada tabel di bawah ini</p>
         <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
@@ -30,26 +30,24 @@
                     <td><?= $i; ?></th>
                     <td><?= $row["deskripsi"] ?></td>
                     <td><?=date("d F Y",strtotime($row["tgl"])); ?></td>
-                    <td>Rp.<?= $row["nominal"] ?></td>
+                    <td>Rp<?= number_format($row["nominal"]); ?></td>
                 </tr>
-            <?php $i++; ?>
+            <?php $i++;?>
             <?php endforeach; ?>
-            <tr>
-                <th colspan="3">Total</th>
-                <td>
-                    Rp.<?=
-                        $row["nominal"];
-                    ?>
-                </td>
-            </tr>
         </table>
         </div>
+        <p>Segala informasi di atas merupakan data laporan terbaru yang telah dicetak</p>
 	</section>
     <div class="mengetahui">
-        <p>Bogor, <?= date("d F Y");?></p>
-        <p>Mengetahui</p>
+        <p>
+            <?php 
+                echo "Bogor, ";
+                echo date("l d F Y");
+            ?>
+        </p>
+        <p style="text-align:center;">Mengetahui</p>
         <br>
-        <p>(Admin)</p>
+        <p style="text-align:center;">Admin</p>
     </div>
     <script>
         window.print();

@@ -2,6 +2,7 @@
     require '../functions.php';
     $dbdata = query("SELECT*FROM user");
     $datalapor = query("SELECT*FROM rekapdata");
+    $infaq = query("SELECT*FROM datainfaq");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,9 +55,10 @@
 		});
 	</script>
 	<section class="maindsb">
-			<h1>List Data Laporan Terbaru</h1>
-            <button type="button"><a href="../admin/cetakadmin.php" class="cetak" target="_blank">Cetak Laporan</a></button>
-            <br>
+			<h1>List Seluruh Data Laporan Terbaru</h1>
+            <button type="button">
+                <a href="../admin/cetakadmin.php" class="cetak" target="_blank">Cetak Laporan</a>
+            </button>
             <br>
         <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
@@ -68,27 +70,42 @@
             <!--Membuat Perulangan dengan PHP untuk tabel id-->
             <?php $i = 1;  ?>
             <!-- Memanggil perulangan foreach dari tabel rekapdata -->
-            <?php foreach($datalapor as $row) : ?>
+            <?php $total=0; foreach($datalapor as $row) : ?>
             <tr>
                 <td><?= $i; ?></th>
                 <td><?= $row["deskripsi"] ?></td>
                 <td><?=date("d F Y",strtotime($row["tgl"])); ?></td>
-                <td>Rp.<?= $row["nominal"] ?></td>
+                <td>Rp<?= number_format($row["nominal"]) ?></td>
 
             </tr>
 
             <?php $i++; ?>
             <?php endforeach; ?>
+            </table>
+            <h1>List Data Infaq Terbaru untuk di Cetak</h1>
+            <button type="button">
+                <a href="../admin/cetakadmininfaq.php" class="cetak" target="_blank">Cetak Laporan Infaq</a>
+            </button>
+            <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
-                <th colspan="3">Total</th>
-                <td>
-                    Rp.<?=
-                        $row["nominal"];
-                    ?>
-                </td>
+                <th>No.</th>
+                <th>Deskripsi</th>
+                <th>Tanggal</th>
+                <th>Total</th>
             </tr>
-        </table>
-        </div>
+            <!--Membuat Perulangan dengan PHP untuk tabel id-->
+            <?php $i = 1;  ?>
+            <!-- Memanggil perulangan foreach dari tabel rekapdata -->
+            <?php foreach($infaq as $r) : ?>
+            <tr>
+                <td><?= $i; ?></th>
+                <td><?= $r["deskripsi"] ?></td>
+                <td><?=date("d F Y",strtotime($r["tgl"])); ?></td>
+                <td>Rp.<?= number_format($r["total"]) ?></td>
+            </tr>
+            <?php $i++; ?>
+            <?php endforeach; ?>
+            </table>
 	</section>
 </body>
 </html>

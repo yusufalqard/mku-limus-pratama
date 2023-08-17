@@ -3,60 +3,51 @@
     $lihatrekap = query("SELECT * FROM rekapdata WHERE deskripsi LIKE '%Infaq%'");
 ?>
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Cetak Print Laporan - Guest Mode</title>
-    <link rel="stylesheet" type="text/css" href="../style/style.css"/>
+    <title>Cetak Laporan Infaq - Guest MKU</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	<script type="text/javascript" src="../js/jquery.js"></script>
-</head>
-<body>
-    <center>
-	<div class="cetaklaporanguest">
-        <h2>Laporan Infaq Jum'at Masjid Khoiru Ummah</h2>
-        <p>Assalamualaikum wr.wb</p>
-        <p>Berikut merupakan data infaq jum'at tiap mingguan terbaru yang diakumulasikan<p>
-
-        <table class="cekrekaptbl" border="1" cellpadding="10" cellspacing="0">
+  </head>
+<body class="adminPAGE">
+	<section class="maindsb">
+        <h2>Masjid Khoiru Ummah</h2>
+        <p>Mengetahui bahwa data laporan keseluruhan pada tabel di bawah ini</p>
+        <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
                 <th>Deskripsi</th>
-                <th>Tanggal Catat</th>
-                <th>Nominal</th>
+                <th>Tanggal</th>
+                <th>Total</th>
             </tr>
             <!--Membuat Perulangan dengan PHP untuk tabel id-->
             <?php $i = 1;  ?>
             <!-- Memanggil perulangan foreach dari tabel rekapdata -->
-            <?php foreach($lihatrekap as $data) : ?>
-            <tr>
-                <td><?= $i; ?></td>
-                <td><?= $data["deskripsi"] ?></td>
-                <td><?= date("d F Y",strtotime($data["tgl"])); ?></td>
-                <td>
-                    Rp.<?= $data["nominal"] ?>
-                </td>
-            </tr>
-            <?php $i++; ?>
+            <?php foreach($lihatrekap as $r) : ?>
+                <tr>
+                    <td><?= $i; ?></th>
+                    <td><?= $r["deskripsi"] ?></td>
+                    <td><?=date("d F Y",strtotime($r["tgl"])); ?></td>
+                    <td>Rp<?= number_format($r["nominal"]); ?></td>
+                </tr>
+            <?php $i++;?>
             <?php endforeach; ?>
             <tr>
-                <td colspan="3">Total</td>
-                <td>
-                    Rp.<?=
-                        $data["nominal"];
-                    ?>
-                </td>
+                <th colspan="3">Total</th>
+                <td>Rp25,995,000</td>
             </tr>
-        </table> 
-		<br>
-    </div>
+        </table>
+        </div>
+        <p>Segala informasi tabel di atas merupakan data laporan infaq terbaru</p>
+	</section>
     <div class="mengetahui">
-        <p>Bogor, <?= date("d F Y");?></p>
-        <p>Mengetahui</p>
+        <p><?php echo "Bogor, "; echo date("l d F Y");?></p>
+        <p style="text-align:center;">Mengetahui</p>
         <br>
-        <p>(Pengurus DKM)</p>
+        <p style="text-align:center;">Pengurus DKM</p>
     </div>
-    </center>
     <script>
         window.print();
     </script>

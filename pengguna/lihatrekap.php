@@ -50,7 +50,7 @@
     </center>
       <br>
       <br>
-      <table name="data" class="cekrekaptbl" border="1" cellpadding="10" cellspacing="0">
+      <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>No.</th>
                 <th>Deskripsi</th>
@@ -66,19 +66,11 @@
                 <td><?= $data["deskripsi"] ?></td>
                 <td><?= date("d F Y",strtotime($data["tgl"])); ?></td>
                 <td>
-                    Rp.<?= $data["nominal"] ?>
+                    Rp.<?= number_format($data["nominal"]); ?>
                 </td>
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
-            <tr>
-                <td colspan="3">Total</td>
-                <td>
-                    Rp.<?=
-                        $data["nominal"];
-                    ?>
-                </td>
-            </tr>
         </table>
                     <div class="botLogoFooter" id="footer">
                         <p>© 2023 Masjid Khoiru Ummah, Org. All rights reserved</p>

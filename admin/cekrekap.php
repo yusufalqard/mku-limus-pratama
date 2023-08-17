@@ -98,7 +98,7 @@
                 <td><?= $i; ?></td>
                 <td><?= $row["deskripsi"] ?></td>
                 <td><?= $row["tgl"] ?></td>
-                <td>Rp.<?= $row["nominal"] ?></td>
+                <td>Rp<?= number_format($row["nominal"]); ?></td>
                 <td>
                     <a href="ubahdata.php?id=<?= $row["id"];?>">Ubah</a>
                     <a href="hapus.php?id=<?= $row["id"];?>" onclick="return confirm('Yakin Hapus Data');">Hapus</a>
