@@ -1,16 +1,16 @@
-<?php 
-	require '../session_mulai.php';
-	require '../functions.php';
-	// $admindata = query("SELECT*FROM rekapdata");
-	$datauser=query("SELECT*FROM user");
-	//Query untuk pagination
-				$jumlahdata=3;
-				$jumlahperdata=count(query("SELECT*FROM rekapdata"));
-				$pageHal=ceil($jumlahperdata/$jumlahdata);
-				$pageaktif=(isset($_GET["page"]) ) ? $_GET["page"] : 1;
-				$pageawal=($jumlahdata*$pageaktif)-$jumlahdata;
-				$admindata=query("SELECT*FROM rekapdata LIMIT $pageawal,$jumlahdata");
-			
+<?php
+require '../session_mulai.php';
+require '../functions.php';
+// $admindata = query("SELECT*FROM rekapdata");
+$datauser = query("SELECT*FROM user");
+//Query untuk pagination
+$jumlahdata = 3;
+$jumlahperdata = count(query("SELECT*FROM rekapdata"));
+$pageHal = ceil($jumlahperdata / $jumlahdata);
+$pageaktif = (isset($_GET["page"])) ? $_GET["page"] : 1;
+$pageawal = ($jumlahdata * $pageaktif) - $jumlahdata;
+$admindata = query("SELECT*FROM rekapdata LIMIT $pageawal,$jumlahdata");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
