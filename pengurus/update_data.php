@@ -24,7 +24,7 @@
 <html lang="en">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ubah Data Pengguna - Admin Mode</title>
+    <title>Ubah Data Pengguna - Pengurus Mode</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
 	<script type="text/javascript" src="../js/jquery.js"></script>
 <body class="adminPAGE">

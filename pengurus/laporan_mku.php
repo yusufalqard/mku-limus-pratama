@@ -97,7 +97,7 @@
                 <td><?= $i; ?></th>
                 <td><?= $r["deskripsi"] ?></td>
                 <td><?=date("d F Y",strtotime($r["tgl"])); ?></td>
-                <td>Rp.<?= number_format($r["total"]) ?></td>
+                <td>Rp<?= number_format($r["total"]) ?></td>
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>

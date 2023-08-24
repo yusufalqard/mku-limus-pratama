@@ -66,7 +66,7 @@
                 <td><?= $data["deskripsi"] ?></td>
                 <td><?= date("d F Y",strtotime($data["tgl"])); ?></td>
                 <td>
-                    Rp.<?= number_format($data["nominal"]); ?>
+                    Rp<?= number_format($data["nominal"]); ?>
                 </td>
             </tr>
             <?php $i++; ?>

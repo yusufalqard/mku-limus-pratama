@@ -43,7 +43,9 @@
         <p>Segala informasi tabel di atas merupakan data laporan infaq terbaru</p>
 	</section>
     <div class="mengetahui">
-        <p><?php echo "Bogor, "; echo date("l d F Y");?></p>
+        <p><?php setlocale(LC_ALL, 'id-ID', 'id_ID');
+                echo "Bogor, ";
+                echo strftime("%A %d %B %Y");?></p>
         <p style="text-align:center;">Mengetahui</p>
         <br>
         <p style="text-align:center;">Pengurus DKM</p>

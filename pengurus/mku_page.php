@@ -96,7 +96,6 @@
                 <td><?= date("d F Y",strtotime($cekdb["tgl"])); ?></td>
                 <td>Rp<?= $cekdb["nominal"] ?></td>
             </tr>
-
             <?php $i++; ?>
             <?php endforeach; ?>
         </table>

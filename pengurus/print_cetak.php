@@ -1,6 +1,6 @@
 <?php
     require '../functions.php';
-    $datalapor = query("SELECT*FROM rekapdata");
+    $datalapor = query("SELECT*FROM rekapdata WHERE deskripsi NOT LIKE '%Infaq%'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
   </head>
 <body class="adminPAGE">
 	<section class="maindsb">
-        <h2><?= date("l, d F Y");?></h2>
+        <h2>Masjid Khoiru Ummah</h2>
         <p>Berikut rekap data laporan terbaru saat ini</p>
         <table class="rekapadmin" border="1" cellpadding="10" cellspacing="0">
             <tr>
@@ -30,7 +30,7 @@
                     <td><?= $i; ?></th>
                     <td><?= $row["deskripsi"] ?></td>
                     <td><?=date("d F Y",strtotime($row["tgl"])); ?></td>
-                    <td>Rp.<?= $row["nominal"] ?></td>
+                    <td>Rp<?= number_format($row["nominal"]); ?></td>
                 </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
@@ -38,7 +38,9 @@
         </div>
 	</section>
     <div class="mengetahui">
-        <p>Bogor, <?= date("d F Y");?></p>
+        <p><?php setlocale(LC_ALL, 'id-ID', 'id_ID');
+                echo "Bogor, ";
+                echo strftime("%A %d %B %Y");?></p>
         <p>Mengetahui</p>
         <br>
         <p>Pengurus DKM</p>
